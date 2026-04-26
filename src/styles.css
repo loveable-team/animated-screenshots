@@ -72,10 +72,10 @@
   --card-foreground: oklch(0.18 0.04 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.04 260);
-  --primary: oklch(0.48 0.18 260);
+  --primary: oklch(0.298 0.128 260.5);
   --primary-foreground: oklch(0.99 0.003 247);
-  --brand: oklch(0.48 0.18 260);
-  --brand-dark: oklch(0.32 0.14 262);
+  --brand: oklch(0.298 0.128 260.5);
+  --brand-dark: oklch(0.22 0.1 260.5);
   --section-muted: oklch(0.96 0.008 250);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -110,8 +110,8 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.45 0.15 260.5);
+  --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
@@ -130,7 +130,7 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.45 0.15 260.5);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
@@ -143,6 +143,11 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for fixed navbar height */
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -151,28 +156,60 @@
 
 @layer utilities {
   @keyframes fade-up {
-    from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   @keyframes fade-left {
-    from { opacity: 0; transform: translateX(-32px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   @keyframes fade-right {
-    from { opacity: 0; transform: translateX(32px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   @keyframes float-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
   @keyframes pulse-soft {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.04); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
   }
 
   .reveal {
@@ -195,7 +232,9 @@
     animation: float-slow 4s ease-in-out infinite;
   }
   .hover-lift {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease;
   }
   .hover-lift:hover {
     transform: translateY(-6px);
