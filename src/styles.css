@@ -148,3 +148,57 @@
     color: var(--color-foreground);
   }
 }
+
+@layer utilities {
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-left {
+    from { opacity: 0; transform: translateX(-32px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fade-right {
+    from { opacity: 0; transform: translateX(32px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes pulse-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+
+  .reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .reveal.in-view {
+    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-left.in-view {
+    animation: fade-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-right.in-view {
+    animation: fade-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-fade.in-view {
+    animation: fade-in 1s ease-out forwards;
+  }
+  .float-anim {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -20px color-mix(in oklab, var(--brand) 30%, transparent);
+  }
+}
