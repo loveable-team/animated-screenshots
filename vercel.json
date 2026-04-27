@@ -2,17 +2,9 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist/client",
   "installCommand": "pnpm install",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ],
   "rewrites": [
     {
-      "source": "/((?!assets).*)",
+      "source": "/((?!assets/).*)",
       "destination": "/index.html"
     }
   ]
