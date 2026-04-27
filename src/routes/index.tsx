@@ -55,7 +55,7 @@ function Navbar() {
           </a>
         </nav>
         <a
-          href="#"
+          href="https://funder.cekaset.com"
           className="rounded-md bg-brand px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-brand-dark hover:shadow-lg"
         >
           Gabung Sekarang
