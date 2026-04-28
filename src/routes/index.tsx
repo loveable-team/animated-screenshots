@@ -14,19 +14,48 @@ import iconRocket from "@/assets/icon-rocket.png";
 import iconCommunity from "@/assets/icon-community.png";
 import iconNetwork from "@/assets/icon-network.png";
 import logo from "@/assets/logo.png";
+import ogImage from "@/assets/og-preview.jpg";
+
+const SITE_URL = "https://cekaset.com";
+const SITE_TITLE = "CekAset.com — Ekosistem Komunitas WELIPO";
+const SITE_DESC =
+  "Platform eksklusif milik Member Ekosistem Komunitas WELIPO & Afiliasinya untuk memantau aset, kalkulasi potensi gain, dan pertumbuhan treasury.";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "CekAset.com — Ekosistem Komunitas WELIPO" },
-      {
-        name: "description",
-        content:
-          "Platform eksklusif milik Member Ekosistem Komunitas WELIPO & Afiliasinya untuk memantau aset masing-masing.",
-      },
-    ],
-  }),
+  head: () => {
+    const ogImageUrl = `${SITE_URL}${ogImage}`;
+    return {
+      meta: [
+        { title: SITE_TITLE },
+        { name: "description", content: SITE_DESC },
+        {
+          name: "keywords",
+          content:
+            "CekAset, WELIPO, ekosistem komunitas, treasury, aset, investasi, member welipo",
+        },
+        // Open Graph (WhatsApp, Facebook, LinkedIn)
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: SITE_URL },
+        { property: "og:title", content: SITE_TITLE },
+        { property: "og:description", content: SITE_DESC },
+        { property: "og:image", content: ogImageUrl },
+        { property: "og:image:secure_url", content: ogImageUrl },
+        { property: "og:image:type", content: "image/jpeg" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "640" },
+        { property: "og:image:alt", content: "CekAset.com — Ekosistem Komunitas WELIPO" },
+        { property: "og:site_name", content: "CekAset.com" },
+        { property: "og:locale", content: "id_ID" },
+        // Twitter
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: SITE_TITLE },
+        { name: "twitter:description", content: SITE_DESC },
+        { name: "twitter:image", content: ogImageUrl },
+      ],
+      links: [{ rel: "canonical", href: SITE_URL }],
+    };
+  },
 });
 
 function Navbar() {
