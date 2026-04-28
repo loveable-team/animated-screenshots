@@ -19,11 +19,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "CekAset.com — Ekosistem Komunitas" },
+      { title: "CekAset.com — Ekosistem Komunitas WELIPO" },
       {
         name: "description",
         content:
-          "Platform eksklusif milik Member Ekosistem Komunitas untuk memantau aset masing-masing.",
+          "Platform eksklusif milik Member Ekosistem Komunitas WELIPO & Afiliasinya untuk memantau aset masing-masing.",
       },
     ],
   }),
@@ -35,7 +35,7 @@ function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between bg-card/95 px-6 py-3 shadow-sm backdrop-blur md:mx-6 lg:mx-auto">
         <a href="#" className="flex items-center gap-2 font-semibold text-foreground">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg">
-            <img src={logo} alt="Logo Cek Aset" className="" width={100} height={100} />
+            <img src={logo} alt="Logo Welipo" className="" width={100} height={100} />
           </span>
           CekAset.com
         </a>
