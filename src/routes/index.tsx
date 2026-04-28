@@ -13,16 +13,17 @@ import iconTeam from "@/assets/icon-team.png";
 import iconRocket from "@/assets/icon-rocket.png";
 import iconCommunity from "@/assets/icon-community.png";
 import iconNetwork from "@/assets/icon-network.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "CekAset.com — Ekosistem Komunitas WELIPO" },
+      { title: "CekAset.com — Ekosistem Komunitas" },
       {
         name: "description",
         content:
-          "Platform eksklusif milik Member Ekosistem Komunitas WELIPO & Afiliasinya untuk memantau aset masing-masing.",
+          "Platform eksklusif milik Member Ekosistem Komunitas untuk memantau aset masing-masing.",
       },
     ],
   }),
@@ -33,10 +34,8 @@ function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-6xl items-center justify-between bg-card/95 px-6 py-3 shadow-sm backdrop-blur md:mx-6 lg:mx-auto">
         <a href="#" className="flex items-center gap-2 font-semibold text-foreground">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-primary-foreground">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-              <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5L2 14.5l10 5 10-5-10-5z" />
-            </svg>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg">
+            <img src={logo} alt="Logo Cek Aset" className="" width={100} height={100} />
           </span>
           CekAset.com
         </a>
