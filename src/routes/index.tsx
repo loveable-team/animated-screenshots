@@ -125,7 +125,34 @@ function AboutSection() {
   return (
     <section id="siapa" className="bg-section-muted py-20">
       <div className="mx-auto max-w-6xl px-6 relative">
-        <div className="relative flex items-center">
+        {/* Mobile: stacked image-on-top, text-below */}
+        <div className="flex flex-col gap-6 md:hidden">
+          <img
+            src={aboutPerson}
+            alt="Member memantau aset"
+            loading="lazy"
+            width={1200}
+            height={800}
+            className="reveal-right rounded-3xl object-cover shadow-xl w-full h-56"
+          />
+          <div
+            className="reveal-left bg-card p-8 shadow-xl"
+            style={{
+              borderTopRightRadius: "1.5rem",
+              borderTopLeftRadius: "1.5rem",
+              borderBottomLeftRadius: "1.5rem",
+              borderBottomRightRadius: "1.5rem",
+            }}
+          >
+            <h2 className="text-2xl font-bold text-foreground">Siapa CekAset.com?</h2>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              Platform Eksklusif milik Member Ekosistem Komunitas WELIPO &amp; Afiliasinya untuk
+              memantau Aset masing-masing.
+            </p>
+          </div>
+        </div>
+        {/* Desktop: original overlapping layout */}
+        <div className="relative hidden md:flex items-center">
           <div
             className="reveal-left relative z-20 bg-card p-10 shadow-xl max-w-lg"
             style={{
@@ -158,9 +185,40 @@ function AboutSection() {
 
 function GoalSection() {
   return (
-    <section id="tujuan" className="bg-section-muted pb-20 pt-30">
+    <section id="tujuan" className="bg-section-muted pb-20 pt-20 md:pt-30">
       <div className="mx-auto max-w-6xl px-6 relative">
-        <div className="relative flex items-center justify-end">
+        {/* Mobile: stacked image-on-top, text-below */}
+        <div className="flex flex-col gap-6 md:hidden">
+          <img
+            src={goalPerson}
+            alt="Member memikirkan tujuan"
+            loading="lazy"
+            width={1200}
+            height={900}
+            className="reveal-left rounded-3xl object-cover shadow-xl w-full h-56"
+          />
+          <div
+            className="reveal-right bg-card p-8 shadow-xl"
+            style={{
+              borderTopLeftRadius: "1.5rem",
+              borderTopRightRadius: "1.5rem",
+              borderBottomRightRadius: "1.5rem",
+              borderBottomLeftRadius: "1.5rem",
+            }}
+          >
+            <h2 className="text-2xl font-bold text-foreground">Tujuan Platform ini ?</h2>
+            <ul className="mt-6 list-disc space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
+              <li>Memudahkan Member untuk mengetahui kondisi Aset terkini</li>
+              <li>
+                Bisa melakukan kalkulasi sederhana berapa potensi kekayaan bulanan yang bisa
+                dihasilkan
+              </li>
+              <li>Sebagai gambaran peningkatan Treasury Anggota dalam kurun waktu tertentu</li>
+            </ul>
+          </div>
+        </div>
+        {/* Desktop: original overlapping layout */}
+        <div className="relative hidden md:flex items-center justify-end">
           <div className="reveal-left absolute left-0 -top-8 z-10">
             <img
               src={goalPerson}
